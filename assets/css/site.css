@@ -155,17 +155,20 @@ h1, h2, h3 { margin: 0; letter-spacing: -0.035em; line-height: 0.98; font-weight
   88%, 100% { transform: translateX(0); }
 }
 
-.hero-visual { position: relative; justify-self: center; width: min(360px, 78vw); }
-.hero-visual .phone { transform: rotate(-4deg); animation: float 7s ease-in-out infinite; }
-@keyframes float { 50% { transform: rotate(-4deg) translateY(-14px); } }
+.hero-visual { position: relative; justify-self: center; width: min(330px, 70vw); }
+.hero-visual .phone { transform: rotate(-3deg); animation: float 7s ease-in-out infinite; }
+@keyframes float { 50% { transform: rotate(-3deg) translateY(-14px); } }
+
+/* Stem chips sit level with their own row in the screenshot and hang off the
+   frame's edge, as if each stem is being pulled out of the phone. */
 .chip {
-  position: absolute; display: flex; align-items: center; gap: 9px;
-  padding: 9px 14px 9px 11px; border-radius: 14px;
-  background: rgba(13, 18, 25, 0.78); border: 1px solid var(--line-2);
+  position: absolute; z-index: 2; margin-top: -19px;
+  display: flex; align-items: center; gap: 9px;
+  height: 38px; padding: 0 14px 0 11px; border-radius: 13px;
+  background: rgba(13, 18, 25, 0.82); border: 1px solid rgba(15, 227, 154, 0.28);
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-  font-weight: 700; font-size: 14px;
-  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.7);
-  animation: bob 5s ease-in-out infinite;
+  font-weight: 700; font-size: 14px; white-space: nowrap;
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.8), 0 0 24px -8px var(--glow);
 }
 .chip .icon { color: var(--neon); font-size: 17px; }
 .chip .eq { display: flex; align-items: flex-end; gap: 2px; height: 14px; margin-left: 2px; }
@@ -173,27 +176,61 @@ h1, h2, h3 { margin: 0; letter-spacing: -0.035em; line-height: 0.98; font-weight
 .chip .eq i:nth-child(2) { animation-delay: -0.3s; }
 .chip .eq i:nth-child(3) { animation-delay: -0.6s; }
 @keyframes eq { 0%, 100% { height: 25%; } 50% { height: 100%; } }
-@keyframes bob { 50% { transform: translateY(-8px); } }
-.chip.c1 { top: 9%; left: -30%; }
-.chip.c2 { top: 26%; right: -26%; animation-delay: -1s; }
-.chip.c3 { top: 47%; left: -36%; animation-delay: -2s; }
-.chip.c4 { top: 63%; right: -30%; animation-delay: -3s; }
-.chip.c5 { top: 82%; left: -22%; animation-delay: -4s; }
+.chip.l { right: 96%; animation: pull-l 5s ease-in-out infinite; }
+.chip.r { left: 96%; animation: pull-r 5s ease-in-out infinite; }
+@keyframes pull-l { 50% { transform: translateX(-10px); } }
+@keyframes pull-r { 50% { transform: translateX(10px); } }
+/* Row centres in the stems screen: vocals, drums, bass, guitar, piano. */
+.chip.c1 { top: 22%; }
+.chip.c2 { top: 29.3%; animation-delay: -1s; }
+.chip.c3 { top: 36.7%; animation-delay: -2s; }
+.chip.c4 { top: 44%; animation-delay: -3s; }
+.chip.c5 { top: 51.4%; animation-delay: -4s; }
 
-/* ---------- Phone frame ---------- */
-.phone {
-  position: relative; aspect-ratio: 1320 / 2868;
-  border-radius: 15% / 7%;
-  padding: 3.2%;
-  background: linear-gradient(145deg, #2a313c, #0c1016 40%, #1c222b);
+/* ---------- Phone frame ----------
+   iPhone 17 Pro proportions, all in cqw of the phone's width so the frame scales
+   cleanly at any size: titanium rim → black bezel → screen at the exact aspect
+   of the 1320×2868 captures (so nothing gets cropped). */
+.phone { position: relative; container-type: inline-size; }
+.phone .rim {
+  position: relative;
+  padding: 2.5cqw;
+  border: 1.1cqw solid transparent;
+  border-radius: 16.8cqw;
+  background:
+    linear-gradient(#020304, #020304) padding-box,
+    linear-gradient(135deg, #b4bcc6 0%, #4a515a 14%, #1c2026 34%, #3d434b 52%, #8c949e 64%, #262a30 82%, #aab2bc 100%) border-box;
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-    0 50px 100px -30px rgba(0, 0, 0, 0.9),
-    0 30px 120px -40px var(--glow);
+    0 0 0 0.3cqw #07090c,
+    inset 0 0 0 0.35cqw rgba(255, 255, 255, 0.04),
+    0 60px 110px -35px rgba(0, 0, 0, 0.9),
+    0 40px 140px -50px var(--glow);
 }
-.phone .screen { position: relative; width: 100%; height: 100%; border-radius: 12.4% / 5.7%; overflow: hidden; background: #000; }
+/* Side buttons: action + volume on the left, power + camera control on the right. */
+.phone .rim::before, .phone .rim::after {
+  content: ""; position: absolute; width: 0.9cqw; z-index: -1;
+  --btn: linear-gradient(90deg, #6f7781, #2c3137 60%, #4b525b);
+}
+.phone .rim::before {
+  left: -2.05cqw; top: 38cqw; height: 64cqw; border-radius: 0.6cqw 0 0 0.6cqw;
+  background: var(--btn) 0 0 / 100% 10cqw no-repeat, var(--btn) 0 18cqw / 100% 19cqw no-repeat, var(--btn) 0 43cqw / 100% 19cqw no-repeat;
+}
+.phone .rim::after {
+  right: -2.05cqw; top: 60cqw; height: 76cqw; border-radius: 0 0.6cqw 0.6cqw 0;
+  background: var(--btn) 0 0 / 100% 30cqw no-repeat, var(--btn) 0 58cqw / 100% 16cqw no-repeat;
+}
+.phone .screen {
+  position: relative; aspect-ratio: 1320 / 2868;
+  border-radius: 13.2cqw; overflow: hidden; background: #000;
+  transform: translateZ(0); /* keeps the rounded clip crisp while animating */
+}
 .phone .screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.6s var(--ease), transform 0.8s var(--ease); }
-.phone .island { position: absolute; top: 2.4%; left: 50%; width: 30%; height: 3.3%; transform: translateX(-50%); background: #000; border-radius: 999px; z-index: 2; }
+/* A soft glass reflection across the display. */
+.phone .screen::after {
+  content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 30%, transparent 42%);
+}
+.phone .island { position: absolute; z-index: 2; top: 2.3cqw; left: 50%; width: 27cqw; height: 7.8cqw; transform: translateX(-50%); background: #000; border-radius: 99px; }
 
 /* ---------- Marquee ---------- */
 .marquee { border-block: 1px solid var(--line); background: var(--bg-2); overflow: hidden; padding: 22px 0; }
@@ -296,7 +333,7 @@ h1, h2, h3 { margin: 0; letter-spacing: -0.035em; line-height: 0.98; font-weight
 /* ---------- Feature scroller ---------- */
 .features { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 8vw, 120px); }
 .features-phone { position: sticky; top: calc(50vh - min(38vh, 330px)); height: min(76vh, 660px); display: grid; place-items: center; }
-.features-phone .phone { height: 100%; width: auto; }
+.features-phone .phone { width: min(35vh, 320px); }
 .features-phone .phone img { opacity: 0; transform: scale(1.04); }
 .features-phone .phone img.is-active { opacity: 1; transform: none; }
 .features-phone::before { content: ""; position: absolute; width: 80%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(15, 227, 154, 0.22), transparent); filter: blur(20px); z-index: -1; }
@@ -452,10 +489,6 @@ a.contact-card:hover { border-color: rgba(15, 227, 154, 0.45); transform: transl
 .no-js .reveal { opacity: 1; transform: none; }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1080px) {
-  .chip.c1, .chip.c3, .chip.c5 { left: -18%; }
-  .chip.c2, .chip.c4 { right: -16%; }
-}
 @media (max-width: 940px) {
   .nav-links, .nav-cta { display: none; }
   .menu-btn { display: inline-flex; }
@@ -473,7 +506,7 @@ a.contact-card:hover { border-color: rgba(15, 227, 154, 0.45); transform: transl
   .hero .lead { margin-inline: auto; }
   .hero-actions { justify-content: center; }
   .rating { flex-direction: column; gap: 6px; }
-  .hero-visual { width: min(290px, 64vw); }
+  .hero-visual { width: min(270px, 60vw); }
   .features { grid-template-columns: 1fr; }
   .features-phone { display: none; }
   .feature { min-height: 0; opacity: 1; padding: 48px 0; border-bottom: 1px solid var(--line); }
@@ -508,10 +541,8 @@ a.contact-card:hover { border-color: rgba(15, 227, 154, 0.45); transform: transl
   @keyframes playhead { from { left: 40px; } to { left: 100%; } }
   .footer-grid { grid-template-columns: 1fr; }
   .toc ol { columns: 1; }
-  .chip { font-size: 12px; padding: 7px 11px 7px 9px; }
-  .chip.c1, .chip.c3, .chip.c5 { left: -14%; }
-  .chip.c2, .chip.c4 { right: -12%; }
-  .chip.c5 { display: none; }
+  .chip { height: 34px; margin-top: -17px; padding: 0 10px; gap: 6px; }
+  .chip .lbl { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
