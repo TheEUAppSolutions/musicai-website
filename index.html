@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#04060a">
+<meta name="apple-itunes-app" content="app-id=6742150522">
+<link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=53b92161">
+
+<title>Stem Split — AI Vocal Remover &amp; Stem Splitter for iPhone</title>
+<meta name="description" content="Split any song into vocals, drums, bass, guitar, piano and more in seconds. Remove vocals for karaoke, isolate any instrument, see the chords, slow it down and play along. Free on the App Store.">
+<link rel="canonical" href="https://musicaistudio.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://musicaistudio.app/">
+<meta property="og:title" content="Stem Split — pull any song apart">
+<meta property="og:description" content="AI stem separation on your iPhone. Vocals, drums, bass, guitar, piano and more — mute it, solo it, play along.">
+<meta property="og:image" content="https://musicaistudio.app/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Stem Split - AI Vocal Remover",
+  "operatingSystem": "iOS 16.4 or later",
+  "applicationCategory": "MultimediaApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "downloadUrl": "https://apps.apple.com/app/id6742150522",
+  "publisher": { "@type": "Organization", "name": "Music AI Studio Ltd", "url": "https://musicaistudio.app/" }
+}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+  <symbol id="i-drum" viewBox="0 0 24 24"><path d="m2 2 8 8"/><path d="m22 2-8 8"/><ellipse cx="12" cy="9" rx="10" ry="5"/><path d="M7 13.4v7.9"/><path d="M12 14v8"/><path d="M17 13.4v7.9"/><path d="M2 9v8a10 5 0 0 0 20 0V9"/></symbol>
+  <symbol id="i-guitar" viewBox="0 0 24 24"><path d="m11.9 12.1 4.51-4.51"/><path d="M20.1 2.3a1 1 0 0 0-1.4 0l-1.11 1.11A2 2 0 0 0 17 4.83v1.34a2 2 0 0 1-.59 1.42A2 2 0 0 1 17.83 7h1.34a2 2 0 0 0 1.42-.59L21.7 5.3a1 1 0 0 0 0-1.4z"/><path d="m6 16 2 2"/><path d="M8.2 9.9C8.7 8.8 9.8 8 11 8c2.8 0 5 2.2 5 5 0 1.2-.8 2.3-1.9 2.8l-.9.4A2 2 0 0 0 12 18a4 4 0 0 1-4 4c-3.3 0-6-2.7-6-6a4 4 0 0 1 4-4 2 2 0 0 0 1.8-1.2z"/></symbol>
+  <symbol id="i-bass" viewBox="0 0 24 24"><g transform="matrix(-1 0 0 1 24 0)"><path d="m11.9 12.1 5.6-5.6"/><path d="M21.6 1.3 19 3.9v2h-2"/><path d="M19 3.9 21 6"/><path d="m6 16 2 2"/><path d="M8.2 9.9C8.7 8.8 9.8 8 11 8c2.8 0 5 2.2 5 5 0 1.2-.8 2.3-1.9 2.8l-.9.4A2 2 0 0 0 12 18a4 4 0 0 1-4 4c-3.3 0-6-2.7-6-6a4 4 0 0 1 4-4 2 2 0 0 0 1.8-1.2z"/></g></symbol>
+  <symbol id="i-piano" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M7 4v9M12 4v9M17 4v9"/><path d="M7 13v7M12 13v7M17 13v7" opacity=".45"/><path d="M5.5 4v7h3V4M15.5 4v7h3V4" fill="currentColor" stroke="none"/><path d="M10.5 4v7h3V4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-notes" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><path d="M3 12h5"/><path d="M8 12c3 0 4-7 8-7h5"/><path d="M8 12c3 0 4 7 8 7h5"/><path d="M8 12h13"/></symbol>
+  <symbol id="i-merge" viewBox="0 0 24 24"><path d="M21 12h-5"/><path d="M16 12c-3 0-4-7-8-7H3"/><path d="M16 12c-3 0-4 7-8 7H3"/><path d="M16 12H3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/><path d="M6 15h4"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></symbol>
+  <symbol id="i-record" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></symbol>
+  <symbol id="i-metronome" viewBox="0 0 24 24"><path d="M9 3h6l4 18H5z"/><path d="m12 16 5-9"/><path d="M7 16h10"/></symbol>
+  <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 5a7 7 0 0 1 7 7"/></symbol>
+  <symbol id="i-karaoke" viewBox="0 0 24 24"><path d="m11 7.6 5.4 5.4"/><circle cx="17" cy="7" r="5"/><path d="M13.5 10.5 4.3 19.7a1 1 0 0 1-1.4 0l-.6-.6a1 1 0 0 1 0-1.4l9.2-9.2"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.53.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></symbol>
+</svg>
+
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Main">
+    <a class="brand" href="/" aria-label="Stem Split home"><img src="/assets/img/icon.svg" alt="" width="34" height="34">Stem Split</a>
+    <div class="nav-links">
+      <a href="/#try">Try it</a>
+      <a href="/#features">Features</a>
+      <a href="/#studio">Studio</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <a class="btn btn-primary btn-sm nav-cta" href="https://apps.apple.com/app/id6742150522">Get the app</a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
+  </nav>
+</header>
+
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow reveal">AI stem separation · iPhone &amp; iPad</span>
+        <h1 class="h-xl reveal" style="--d:.08s">Pull any song <span class="split-word"><span class="ghost">apart.</span><span class="band" aria-hidden="true">apart.</span><span class="band" aria-hidden="true">apart.</span><span class="band" aria-hidden="true">apart.</span><span class="band" aria-hidden="true">apart.</span></span></h1>
+        <p class="lead reveal" style="--d:.16s">Vocals, drums, bass, guitar, piano and everything else, <strong>separated in seconds</strong>. Mute it, solo it, slow it down, see the chords and play along.</p>
+        <div class="hero-actions reveal" style="--d:.24s">
+          <a class="appstore" href="https://apps.apple.com/app/id6742150522" aria-label="Download Stem Split on the App Store">
+            <img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54">
+          </a>
+          <a class="btn btn-ghost" href="#try"><svg class="icon"><use href="#i-play"/></svg>Hear it split</a>
+        </div>
+        <div class="rating reveal" style="--d:.32s">
+          <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <span><b>4.5</b> from 1,300+ ratings on the App Store</span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" style="--d:.2s">
+        <div class="phone">
+          <div class="screen"><span class="island"></span><img src="/assets/img/screens/stems-880.webp" alt="Stem Split showing a song split into six stems: vocals, drums, bass, guitar, piano and other" width="440" height="956" fetchpriority="high"></div>
+        </div>
+        <span class="chip c1"><svg class="icon"><use href="#i-mic"/></svg>Vocals<span class="eq"><i></i><i></i><i></i></span></span>
+        <span class="chip c2"><svg class="icon"><use href="#i-drum"/></svg>Drums<span class="eq"><i></i><i></i><i></i></span></span>
+        <span class="chip c3"><svg class="icon"><use href="#i-bass"/></svg>Bass<span class="eq"><i></i><i></i><i></i></span></span>
+        <span class="chip c4"><svg class="icon"><use href="#i-guitar"/></svg>Guitar<span class="eq"><i></i><i></i><i></i></span></span>
+        <span class="chip c5"><svg class="icon"><use href="#i-piano"/></svg>Piano<span class="eq"><i></i><i></i><i></i></span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Vocal remover</span><span>Karaoke maker</span><span>Stem splitter</span><span>Acapella extractor</span><span>Chord finder</span><span>Synced lyrics</span><span>Tempo &amp; key</span><span>Metronome</span><span>DAW export</span>
+      <span>Vocal remover</span><span>Karaoke maker</span><span>Stem splitter</span><span>Acapella extractor</span><span>Chord finder</span><span>Synced lyrics</span><span>Tempo &amp; key</span><span>Metronome</span><span>DAW export</span>
+    </div>
+  </div>
+
+  <!-- ============ TRY IT ============ -->
+  <section class="section mixer-section" id="try">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow reveal">Try it right here</span>
+        <h2 class="h-lg reveal" style="--d:.08s">Press play.<br>Then hit <span class="glow-text">split.</span></h2>
+        <p class="lead reveal" style="--d:.16s">One song goes in, six stems come out. Mute or solo any of them. This is how every song feels in Stem Split.</p>
+      </div>
+
+      <div class="mixer reveal" data-mixer>
+        <div class="mixer-top">
+          <button class="play" data-play aria-label="Play">
+            <svg class="i-play"><use href="#i-play"/></svg><svg class="i-pause"><use href="#i-pause"/></svg>
+          </button>
+          <div class="track-meta"><b>Dreams in Neon Rain</b><span>Mira Solen · demo track</span></div>
+          <div class="pills"><span class="pill">BPM <b>117</b></span><span class="pill">Key <b>D minor</b></span></div>
+          <button class="btn btn-primary split-btn" data-split>
+            <span class="t-split"><svg class="icon"><use href="#i-split"/></svg> Split into stems</span>
+            <span class="t-merge"><svg class="icon"><use href="#i-merge"/></svg> Back to full mix</span>
+          </button>
+        </div>
+
+        <div class="lanes">
+          <div class="mix-lane">
+            <div class="lane-name"><svg class="icon"><use href="#i-notes"/></svg><span>Full mix</span></div>
+            <div class="wave-box"><canvas data-wave="mix"></canvas></div>
+            <span class="hint">6 stems inside</span>
+          </div>
+          <div class="lane" data-stem="vocals" style="--i:0">
+            <div class="lane-name"><svg class="icon"><use href="#i-mic"/></svg><span>Vocals</span></div>
+            <div class="wave-box"><canvas data-wave="vocals"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute vocals">M</button><button class="ms s" aria-pressed="false" aria-label="Solo vocals">S</button></div>
+          </div>
+          <div class="lane" data-stem="drums" style="--i:1">
+            <div class="lane-name"><svg class="icon"><use href="#i-drum"/></svg><span>Drums</span></div>
+            <div class="wave-box"><canvas data-wave="drums"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute drums">M</button><button class="ms s" aria-pressed="false" aria-label="Solo drums">S</button></div>
+          </div>
+          <div class="lane" data-stem="bass" style="--i:2">
+            <div class="lane-name"><svg class="icon"><use href="#i-bass"/></svg><span>Bass</span></div>
+            <div class="wave-box"><canvas data-wave="bass"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute bass">M</button><button class="ms s" aria-pressed="false" aria-label="Solo bass">S</button></div>
+          </div>
+          <div class="lane" data-stem="guitar" style="--i:3">
+            <div class="lane-name"><svg class="icon"><use href="#i-guitar"/></svg><span>Guitar</span></div>
+            <div class="wave-box"><canvas data-wave="guitar"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute guitar">M</button><button class="ms s" aria-pressed="false" aria-label="Solo guitar">S</button></div>
+          </div>
+          <div class="lane" data-stem="piano" style="--i:4">
+            <div class="lane-name"><svg class="icon"><use href="#i-piano"/></svg><span>Keys</span></div>
+            <div class="wave-box"><canvas data-wave="piano"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute keys">M</button><button class="ms s" aria-pressed="false" aria-label="Solo keys">S</button></div>
+          </div>
+          <div class="lane" data-stem="other" style="--i:5">
+            <div class="lane-name"><svg class="icon"><use href="#i-notes"/></svg><span>Other</span></div>
+            <div class="wave-box"><canvas data-wave="other"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute other">M</button><button class="ms s" aria-pressed="false" aria-label="Solo other">S</button></div>
+          </div>
+        </div>
+
+        <div class="presets" role="group" aria-label="Quick mixes">
+          <button class="preset" data-preset="full" aria-pressed="true">Full band</button>
+          <button class="preset" data-preset="karaoke" aria-pressed="false">Karaoke (no vocals)</button>
+          <button class="preset" data-preset="acapella" aria-pressed="false">Acapella</button>
+          <button class="preset" data-preset="rhythm" aria-pressed="false">Drums + bass</button>
+          <button class="preset" data-preset="drumless" aria-pressed="false">Drumless</button>
+          <button class="preset" data-preset="guitar" aria-pressed="false">Guitar only</button>
+        </div>
+      </div>
+      <p class="mixer-note">An original demo track, played live in your browser. In the app, you split your own songs.</p>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><b>6</b><span>stems from every song</span></div>
+      <div class="stat reveal" style="--d:.08s"><b>4.5<small>★</small></b><span>from 1,300+ App Store ratings</span></div>
+      <div class="stat reveal" style="--d:.16s"><b>8</b><span>audio formats in</span></div>
+      <div class="stat reveal" style="--d:.24s"><b>7</b><span>DAWs your stems open in</span></div>
+    </div>
+  </div>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow reveal">Everything inside</span>
+        <h2 class="h-lg reveal" style="--d:.08s">More than a<br>vocal remover.</h2>
+      </div>
+      <div class="features">
+        <div class="features-phone" aria-hidden="true">
+          <div class="phone"><div class="screen"><span class="island"></span>
+            <img class="is-active" src="/assets/img/screens/stems-880.webp" alt="" loading="lazy">
+            <img src="/assets/img/screens/chords-880.webp" alt="" loading="lazy">
+            <img src="/assets/img/screens/lyrics-880.webp" alt="" loading="lazy">
+            <img src="/assets/img/screens/bpm-880.webp" alt="" loading="lazy">
+            <img src="/assets/img/screens/export-880.webp" alt="" loading="lazy">
+            <img src="/assets/img/screens/import-880.webp" alt="" loading="lazy">
+          </div></div>
+        </div>
+        <div class="feature-list">
+          <article class="feature is-active">
+            <span class="num">01 — STEMS</span>
+            <h3 class="h-md">Split any song into 6 stems.</h3>
+            <p>Vocals, drums, bass, guitar, piano and the rest, each on its own track. Mute or solo any of them. Advanced Split even gives organ, electric piano and synths their own stems.</p>
+            <ul><li>Remove vocals for instant karaoke</li><li>Pull a clean acapella</li><li>Drop out your instrument and play its part</li></ul>
+            <div class="phone"><div class="screen"><img src="/assets/img/screens/stems-440.webp" alt="Six stems with mute buttons" loading="lazy"></div></div>
+          </article>
+          <article class="feature">
+            <span class="num">02 — CHORDS</span>
+            <h3 class="h-md">Every chord, worked out for you.</h3>
+            <p>See the whole progression as the song plays, with a guitar shape for every chord. No more guessing from YouTube tabs.</p>
+            <div class="phone"><div class="screen"><img src="/assets/img/screens/chords-440.webp" alt="Chord progression with a guitar chord diagram" loading="lazy"></div></div>
+          </article>
+          <article class="feature">
+            <span class="num">03 — LYRICS</span>
+            <h3 class="h-md">Lyrics, lined up with the chords.</h3>
+            <p>Follow the song line by line while it plays, with each chord sitting above the word it lands on.</p>
+            <div class="phone"><div class="screen"><img src="/assets/img/screens/lyrics-440.webp" alt="Lyrics with chords above each line" loading="lazy"></div></div>
+          </article>
+          <article class="feature">
+            <span class="num">04 — TEMPO &amp; KEY</span>
+            <h3 class="h-md">Slow it down. Add a click.</h3>
+            <p>Detect the BPM, change the tempo and shift the key without wrecking the sound. Turn on the metronome and practise until it's yours.</p>
+            <div class="phone"><div class="screen"><img src="/assets/img/screens/bpm-440.webp" alt="BPM detection with a metronome toggle" loading="lazy"></div></div>
+          </article>
+          <article class="feature">
+            <span class="num">05 — EXPORT</span>
+            <h3 class="h-md">Take it to your DAW.</h3>
+            <p>Export the mix, every stem, or the lyrics. DAW export gives you aligned WAV stems with tempo and chords, session files for Reaper, Cubase, Studio One and Bitwig, and a MIDI tempo map for Pro Tools, Logic and Ableton.</p>
+            <div class="phone"><div class="screen"><img src="/assets/img/screens/export-440.webp" alt="Export options: audio mix, separated tracks, lyrics" loading="lazy"></div></div>
+          </article>
+          <article class="feature">
+            <span class="num">06 — IMPORT</span>
+            <h3 class="h-md">Bring music in from anywhere.</h3>
+            <p>Files, your iTunes library, the sound from a video in your camera roll, a direct link, or record a jam straight into the app.</p>
+            <div class="phone"><div class="screen"><img src="/assets/img/screens/import-440.webp" alt="Import from Files, record audio, camera roll or iTunes" loading="lazy"></div></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STUDIO ============ -->
+  <section class="section" id="studio" style="padding-top:0">
+    <div class="wrap studio">
+      <div class="studio-copy">
+        <span class="eyebrow reveal">The Studio</span>
+        <h2 class="h-lg reveal" style="--d:.08s">Now it's<br>your <span class="glow-text">turn.</span></h2>
+        <p class="lead reveal" style="--d:.16s">Mute the part you play and record yourself over the band, lined up to the beat.</p>
+        <ul class="check-list reveal" style="--d:.24s">
+          <li><svg class="icon"><use href="#i-record"/></svg><div><b>Record over any song</b><span>Your take lands where you played it, with headphone delay taken out.</span></div></li>
+          <li><svg class="icon"><use href="#i-metronome"/></svg><div><b>See the beat</b><span>Beats and bars are drawn down the timeline, so you can line things up by eye.</span></div></li>
+          <li><svg class="icon"><use href="#i-check"/></svg><div><b>Solo and mute every track</b><span>Hear one part on its own, or everything except you.</span></div></li>
+        </ul>
+      </div>
+      <div class="daw reveal" style="--d:.1s" aria-hidden="true">
+        <span class="rec-badge">REC</span>
+        <div class="daw-ruler"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+        <div class="daw-body">
+          <div class="playhead"></div>
+          <div class="daw-row"><div class="name"><svg class="icon"><use href="#i-drum"/></svg><span>Drums</span></div><div class="daw-lane"><div class="clip" data-wave="drums" style="left:0;right:0"></div></div></div>
+          <div class="daw-row"><div class="name"><svg class="icon"><use href="#i-bass"/></svg><span>Bass</span></div><div class="daw-lane"><div class="clip" data-wave="audio" style="left:0;right:0"></div></div></div>
+          <div class="daw-row"><div class="name"><svg class="icon"><use href="#i-piano"/></svg><span>Keys</span></div><div class="daw-lane"><div class="clip" data-wave="audio" style="left:0;width:48%"></div><div class="clip" data-wave="audio" style="left:50%;right:0"></div></div></div>
+          <div class="daw-row rec"><div class="name"><svg class="icon"><use href="#i-guitar"/></svg><span>Your take</span></div><div class="daw-lane"><div class="clip rec" data-wave="audio" style="left:25%;width:62%"></div></div></div>
+          <div class="daw-row"><div class="name"><svg class="icon"><use href="#i-metronome"/></svg><span>Click</span></div><div class="daw-lane"><div class="clip click" data-wave="click" style="left:0;right:0"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PERSONAS ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow reveal">Built for musicians</span>
+        <h2 class="h-lg reveal" style="--d:.08s">Whatever you play.</h2>
+        <p class="lead reveal" style="--d:.16s">Built for musicians who take their craft seriously, and for anyone who just wants to sing along.</p>
+      </div>
+      <div class="personas">
+        <article class="persona reveal"><svg class="icon"><use href="#i-mic"/></svg><h3>Singers</h3><p>Pull the vocal out to study phrasing, pitch and runs. Or take it away and sing over the band.</p><span class="tag">Solo · Vocals</span></article>
+        <article class="persona reveal" style="--d:.06s"><svg class="icon"><use href="#i-guitar"/></svg><h3>Guitarists</h3><p>Isolate the guitar, slow it down and learn every riff note for note, with the chord shapes on screen.</p><span class="tag">Solo · Guitar</span></article>
+        <article class="persona reveal" style="--d:.12s"><svg class="icon"><use href="#i-bass"/></svg><h3>Bassists</h3><p>Lock in with the original groove, then drop the bass out and take its place.</p><span class="tag">Mute · Bass</span></article>
+        <article class="persona reveal"><svg class="icon"><use href="#i-drum"/></svg><h3>Drummers</h3><p>Strip a song down to the kit to learn the part, then kill the drums and play along.</p><span class="tag">Mute · Drums</span></article>
+        <article class="persona reveal" style="--d:.06s"><svg class="icon"><use href="#i-disc"/></svg><h3>DJs &amp; producers</h3><p>Clean acapellas and instrumentals for edits, mashups and live sets, exported straight into your DAW.</p><span class="tag">Export · WAV stems</span></article>
+        <article class="persona reveal" style="--d:.12s"><svg class="icon"><use href="#i-karaoke"/></svg><h3>Karaoke night</h3><p>Any song without the singer, and the lyrics right there on screen, line by line.</p><span class="tag">Mute · Vocals</span></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow reveal">How it works</span>
+        <h2 class="h-lg reveal" style="--d:.08s">Three taps.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>Import a song</h3><p>From Files, your library, a video or a link. Or record it right in the app.</p></div>
+        <div class="step reveal" style="--d:.08s"><h3>Tap Split</h3><p>Our AI separates every instrument. Your stems are ready in seconds.</p></div>
+        <div class="step reveal" style="--d:.16s"><h3>Make it yours</h3><p>Play, mute, solo, slow it down, record over it, or export every track.</p></div>
+      </div>
+      <div class="formats reveal" aria-label="Supported import formats"><span>MP3</span><span>WAV</span><span>M4A</span><span>AAC</span><span>ALAC</span><span>FLAC</span><span>OGG</span><span>MP4</span></div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow reveal">FAQ</span>
+        <h2 class="h-lg reveal" style="--d:.08s">Good questions.</h2>
+      </div>
+      <div class="faq reveal">
+        <details open>
+          <summary>What does Stem Split do?</summary>
+          <div class="a"><p>It uses AI to separate a song into its parts: vocals, drums, bass, guitar, piano and everything else. You can then mute or solo any part, remove the vocals for karaoke, see the chords and lyrics, change the tempo and key, record yourself over the band, and export the stems.</p></div>
+        </details>
+        <details>
+          <summary>Is it free?</summary>
+          <div class="a"><p>Stem Split is free to download and try. Full access is part of Stem Split Pro, which you can get inside the app as a subscription or a one-time purchase.</p></div>
+        </details>
+        <details>
+          <summary>Which songs can I use?</summary>
+          <div class="a"><p>Any audio you own or have the rights to use: files (MP3, WAV, M4A, AAC, ALAC, FLAC, OGG, MP4), your iTunes library, the sound from videos in your camera roll, a direct link to an audio file, or a recording made in the app. Songs from streaming services like Spotify, Apple Music and YouTube can't be imported.</p></div>
+        </details>
+        <details>
+          <summary>Can I use the stems in my DAW?</summary>
+          <div class="a"><p>Yes. Export each stem on its own, or choose DAW export for aligned WAV stems with tempo and chords, plus session files that open in Reaper, Cubase, Studio One and Bitwig, and a MIDI tempo map for Pro Tools, Logic and Ableton.</p></div>
+        </details>
+        <details>
+          <summary>What happens to my audio?</summary>
+          <div class="a"><p>Songs you split are uploaded over an encrypted connection to our servers, which separate them and send the stems back to you. We use your audio only to provide the service and never sell it. The details are in our <a href="/privacy-policy/">Privacy Policy</a>.</p></div>
+        </details>
+        <details>
+          <summary>How do I cancel my subscription?</summary>
+          <div class="a"><p>If you subscribed in the app, open <strong>Settings → your name → Subscriptions</strong> on your iPhone or iPad and choose Stem Split. If you subscribed on our website, use <a href="https://billing.stripe.com/p/login/cNibJ0bm02Nm5Oo03pe3e00">Manage web subscription</a>.</p></div>
+        </details>
+        <details>
+          <summary>Which devices does it run on?</summary>
+          <div class="a"><p>iPhone and iPad running iOS 16.4 or later.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta">
+    <div class="bars" aria-hidden="true"></div>
+    <div class="wrap inner">
+      <h2 class="h-xl reveal">Your song.<br><span class="glow-text">Every part of it.</span></h2>
+      <p class="lead reveal" style="--d:.1s">Free on the App Store for iPhone and iPad.</p>
+      <a class="appstore reveal" style="--d:.2s" href="https://apps.apple.com/app/id6742150522" aria-label="Download Stem Split on the App Store">
+        <img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54" loading="lazy">
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/"><img src="/assets/img/icon.svg" alt="" width="34" height="34">Stem Split</a>
+        <p>Split any song into vocals, drums, bass, guitar, piano and more. Made in London by Music AI Studio Ltd.</p>
+      </div>
+      <div>
+        <h4>App</h4>
+        <ul>
+          <li><a href="https://apps.apple.com/app/id6742150522">Download on the App Store</a></li>
+          <li><a href="/#try">Try the demo</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="mailto:info@musicaistudio.app">info@musicaistudio.app</a></li>
+          <li><a href="https://billing.stripe.com/p/login/cNibJ0bm02Nm5Oo03pe3e00">Manage web subscription</a></li>
+          <li><a href="https://www.tiktok.com/@musica.ai.app">TikTok</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/term-and-conditions/">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Music AI Studio Ltd · 71–75 Shelton Street, Covent Garden, London WC2H 9JQ, United Kingdom</span>
+      <span>Apple, the Apple logo and iPhone are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=53b92161"></script>
+<script src="/assets/js/mixer.js?v=53b92161"></script>
+</body>
+</html>
