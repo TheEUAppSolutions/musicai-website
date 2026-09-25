@@ -161,7 +161,11 @@ fr-FR listings, and the app UI is localised.
   speaker review each page. Thin or garbled translations hurt more than they help.
 - **Legal pages** stay English-only (with a note) unless counsel says otherwise.
 
-## Phase 6: ASO, and how the site feeds it (⏳, needs the owner's decisions)
+## Phase 6: ASO, and how the site feeds it (⏸ on hold)
+
+**2026-09-25: the owner decided not to change any App Store metadata for now.** The drafts
+(names, subtitles and keywords for 8 locales) were reviewed in chat but not written to
+`fastlane/metadata`. Revisit only when asked.
 
 The website helps the App Store listing directly: install velocity from the web counts
 toward ranking, and Search Console shows which words people use. That feeds keyword
@@ -197,7 +201,7 @@ choices, and the store listing's words feed the page titles.
 
 1. ✅ Search Console verified and campaign links tagged. 🟡 Owner submits `sitemap.xml`.
 2. ✅ Intent pages live. Watch Search Console for 4–6 weeks.
-3. ⏳ ASO clean-up for en-US, es-MX, pt-BR, fr-FR (owner decides the copy; ships with the next version).
+3. ⏸ ASO clean-up: on hold by the owner's decision (2026-09-25).
 4. ⏳ API security fixes: HTTPS, auth enforcement, private bucket, dashboard auth. These are prerequisites for the web tool.
 5. ⏳ Free 30-second web splitter (spending decision).
 6. ⏳ Guides, one a week.
