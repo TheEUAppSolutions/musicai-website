@@ -32,7 +32,7 @@ APP_ID = "6742150522"
 
 # App Store Connect → Analytics → Acquisition → Campaigns → "Generate campaign
 # link" shows it as pt=… . While empty, download links carry no campaign data.
-APPSTORE_PT = ""
+APPSTORE_PT = "127629796"
 
 # Pages kept out of the sitemap (and marked noindex in their own <head>).
 UNLISTED = {"404.html", "stemsplit/index.html"}
