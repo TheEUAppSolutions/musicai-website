@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=a249ebaf">
+<link rel="stylesheet" href="/assets/css/site.css?v=869cd31e">
 
 <title>Stem Split — AI Vocal Remover &amp; Stem Splitter for iPhone &amp; iPad</title>
 <meta name="description" content="Split any song into vocals, drums, bass, guitar, piano and more in seconds. Remove vocals for karaoke, isolate any instrument, see the chords, slow it down and play along. Free on the App Store.">
@@ -132,13 +132,13 @@
         <p class="lead reveal" style="--d:.16s">One song goes in, six stems come out. Mute or solo any of them. This is how every song feels in Stem Split.</p>
       </div>
 
-      <div class="mixer reveal" data-mixer>
+      <div class="mixer reveal" data-mixer data-start="">
         <div class="mixer-top">
           <button class="play" data-play aria-label="Play">
             <svg class="i-play"><use href="#i-play"/></svg><svg class="i-pause"><use href="#i-pause"/></svg>
           </button>
           <div class="track-meta"><b>Dreams in Neon Rain</b><span>Mira Solen · demo track</span></div>
-          <div class="pills"><span class="pill">BPM <b>117</b></span><span class="pill">Key <b>D minor</b></span></div>
+          <div class="pills"><span class="pill">BPM <b data-bpm>117</b></span><span class="pill">Key <b data-key>D minor</b></span></div>
           <button class="btn btn-primary split-btn" data-split>
             <span class="t-split"><svg class="icon"><use href="#i-split"/></svg> Split into stems</span>
             <span class="t-merge"><svg class="icon"><use href="#i-merge"/></svg> Back to full mix</span>
@@ -183,6 +183,7 @@
           </div>
         </div>
 
+
         <div class="presets" role="group" aria-label="Quick mixes">
           <button class="preset" data-preset="full" aria-pressed="true">Full band</button>
           <button class="preset" data-preset="karaoke" aria-pressed="false">Karaoke (no vocals)</button>
@@ -190,8 +191,11 @@
           <button class="preset" data-preset="rhythm" aria-pressed="false">Drums + bass</button>
           <button class="preset" data-preset="drumless" aria-pressed="false">Drumless</button>
           <button class="preset" data-preset="guitar" aria-pressed="false">Guitar only</button>
+          <button class="preset" data-preset="bass" aria-pressed="false">Bass only</button>
+          <button class="preset" data-preset="drums" aria-pressed="false">Drums only</button>
         </div>
       </div>
+
       <p class="mixer-note">An original demo track, played live in your browser. In the app, you split your own songs.</p>
     </div>
   </section>
@@ -328,12 +332,12 @@
         <p class="lead reveal" style="--d:.16s">Built for musicians who take their craft seriously, and for anyone who just wants to sing along.</p>
       </div>
       <div class="personas">
-        <article class="persona reveal"><svg class="icon"><use href="#i-mic"/></svg><h3>Singers</h3><p>Pull the vocal out to study phrasing, pitch and runs. Or take it away and sing over the band.</p><span class="tag">Solo · Vocals</span></article>
-        <article class="persona reveal" style="--d:.06s"><svg class="icon"><use href="#i-guitar"/></svg><h3>Guitarists</h3><p>Isolate the guitar, slow it down and learn every riff note for note, with the chord shapes on screen.</p><span class="tag">Solo · Guitar</span></article>
-        <article class="persona reveal" style="--d:.12s"><svg class="icon"><use href="#i-bass"/></svg><h3>Bassists</h3><p>Lock in with the original groove, then drop the bass out and take its place.</p><span class="tag">Mute · Bass</span></article>
-        <article class="persona reveal"><svg class="icon"><use href="#i-drum"/></svg><h3>Drummers</h3><p>Strip a song down to the kit to learn the part, then kill the drums and play along.</p><span class="tag">Mute · Drums</span></article>
-        <article class="persona reveal" style="--d:.06s"><svg class="icon"><use href="#i-disc"/></svg><h3>DJs &amp; producers</h3><p>Clean acapellas and instrumentals for edits, mashups and live sets, exported straight into your DAW.</p><span class="tag">Export · WAV stems</span></article>
-        <article class="persona reveal" style="--d:.12s"><svg class="icon"><use href="#i-karaoke"/></svg><h3>Karaoke night</h3><p>Any song without the singer, and the lyrics right there on screen, line by line.</p><span class="tag">Mute · Vocals</span></article>
+        <a class="persona reveal" href="/acapella-extractor/"><svg class="icon"><use href="#i-mic"/></svg><h3>Singers</h3><p>Pull the vocal out to study phrasing, pitch and runs. Or take it away and sing over the band.</p><span class="tag">Solo · Vocals</span></a>
+        <a class="persona reveal" href="/isolate-guitar/" style="--d:.06s"><svg class="icon"><use href="#i-guitar"/></svg><h3>Guitarists</h3><p>Isolate the guitar, slow it down and learn every riff note for note, with the chord shapes on screen.</p><span class="tag">Solo · Guitar</span></a>
+        <a class="persona reveal" href="/isolate-bass/" style="--d:.12s"><svg class="icon"><use href="#i-bass"/></svg><h3>Bassists</h3><p>Lock in with the original groove, then drop the bass out and take its place.</p><span class="tag">Mute · Bass</span></a>
+        <a class="persona reveal" href="/isolate-drums/"><svg class="icon"><use href="#i-drum"/></svg><h3>Drummers</h3><p>Strip a song down to the kit to learn the part, then kill the drums and play along.</p><span class="tag">Mute · Drums</span></a>
+        <a class="persona reveal" href="/acapella-extractor/" style="--d:.06s"><svg class="icon"><use href="#i-disc"/></svg><h3>DJs &amp; producers</h3><p>Clean acapellas and instrumentals for edits, mashups and live sets, exported straight into your DAW.</p><span class="tag">Export · WAV stems</span></a>
+        <a class="persona reveal" href="/karaoke-maker/" style="--d:.12s"><svg class="icon"><use href="#i-karaoke"/></svg><h3>Karaoke night</h3><p>Any song without the singer, and the lyrics right there on screen, line by line.</p><span class="tag">Mute · Vocals</span></a>
       </div>
     </div>
   </section>
@@ -380,7 +384,7 @@
         </details>
         <details>
           <summary>What happens to my audio?</summary>
-          <div class="a"><p>Songs you split are uploaded over an encrypted connection to our servers, which separate them and send the stems back to you. We use your audio only to provide the service and never sell it. The details are in our <a href="/privacy-policy/">Privacy Policy</a>.</p></div>
+          <div class="a"><p>Songs you split are uploaded to our servers, which separate them and send the stems back to you. We use your audio only to provide the service and never sell it. The details are in our <a href="/privacy-policy/">Privacy Policy</a>.</p></div>
         </details>
         <details>
           <summary>How do I cancel my subscription?</summary>
@@ -428,6 +432,18 @@
         </ul>
       </div>
       <div>
+        <h4>Use cases</h4>
+        <ul>
+          <li><a href="/karaoke-maker/">Karaoke maker</a></li>
+          <li><a href="/acapella-extractor/">Acapella extractor</a></li>
+          <li><a href="/isolate-guitar/">Isolate guitar</a></li>
+          <li><a href="/isolate-bass/">Isolate bass</a></li>
+          <li><a href="/isolate-drums/">Isolate drums</a></li>
+          <li><a href="/chord-finder/">Chord finder</a></li>
+          <li><a href="/slow-down-music/">Slow down music</a></li>
+        </ul>
+      </div>
+      <div>
         <h4>Help</h4>
         <ul>
           <li><a href="/contact/">Contact</a></li>
@@ -455,7 +471,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/site.js?v=a249ebaf"></script>
-<script src="/assets/js/mixer.js?v=a249ebaf"></script>
+<script src="/assets/js/site.js?v=869cd31e"></script>
+<script src="/assets/js/mixer.js?v=869cd31e"></script>
 </body>
 </html>

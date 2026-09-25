@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://musicaistudio.app/</loc><priority>1.0</priority></url>
   <url><loc>https://musicaistudio.app/contact/</loc></url>
+  <url><loc>https://musicaistudio.app/</loc></url>
   <url><loc>https://musicaistudio.app/privacy-policy/</loc></url>
   <url><loc>https://musicaistudio.app/term-and-conditions/</loc></url>
+  <url><loc>https://musicaistudio.app/karaoke-maker/</loc></url>
+  <url><loc>https://musicaistudio.app/acapella-extractor/</loc></url>
+  <url><loc>https://musicaistudio.app/isolate-guitar/</loc></url>
+  <url><loc>https://musicaistudio.app/isolate-bass/</loc></url>
+  <url><loc>https://musicaistudio.app/isolate-drums/</loc></url>
+  <url><loc>https://musicaistudio.app/chord-finder/</loc></url>
+  <url><loc>https://musicaistudio.app/slow-down-music/</loc></url>
 </urlset>

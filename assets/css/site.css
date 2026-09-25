@@ -460,6 +460,24 @@ h1, h2, h3 { margin: 0; letter-spacing: -0.035em; line-height: 0.98; font-weight
 .formats { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 36px; }
 .formats span { font-family: var(--mono); font-size: 12.5px; padding: 7px 12px; border-radius: 8px; border: 1px solid var(--line-2); color: var(--muted); }
 
+/* ---------- Intent landing pages ---------- */
+.intent-hero { padding-bottom: 20px; }
+.intent-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+.intent-copy { display: grid; gap: 24px; justify-items: start; }
+.intent-copy .h-lg { margin-top: 0; }
+.intent-visual { justify-self: center; width: min(300px, 64vw); }
+.intent-visual .phone { transform: rotate(3deg); }
+.crumbs { display: flex; gap: 8px; font-size: 14px; color: var(--dim); }
+.crumbs a { color: var(--muted); }
+.crumbs a:hover { color: var(--neon); }
+.benefits { grid-template-columns: repeat(2, 1fr); }
+a.persona { color: inherit; }
+.persona.related p { font-size: 15px; }
+.mixer-controls { display: flex; flex-wrap: wrap; gap: 14px 28px; margin-top: 22px; }
+.mixer-controls label { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 15px; }
+.mixer-controls input[type="range"] { width: 180px; accent-color: var(--neon); }
+.mixer-controls output { font-family: var(--mono); font-size: 13px; color: var(--neon); min-width: 44px; }
+
 /* ---------- FAQ ---------- */
 .faq { max-width: 860px; margin-inline: auto; display: grid; gap: 10px; }
 .faq details { border: 1px solid var(--line); border-radius: 18px; background: var(--bg-2); transition: border-color 0.3s, background 0.3s; }
@@ -482,7 +500,7 @@ h1, h2, h3 { margin: 0; letter-spacing: -0.035em; line-height: 0.98; font-weight
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--line); background: var(--bg-2); padding: 64px 0 40px; font-size: 15px; color: var(--muted); }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 36px; }
 .footer-grid h4 { margin: 0 0 14px; color: var(--text); font-size: 13px; font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
 .footer-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .footer-grid a:hover { color: var(--neon); }
@@ -560,7 +578,9 @@ a.contact-card:hover { border-color: rgba(15, 227, 154, 0.45); transform: transl
   .feature { min-height: 0; opacity: 1; padding: 48px 0; border-bottom: 1px solid var(--line); }
   .feature .phone { display: block; width: min(280px, 72vw); margin: 18px auto 0; }
   .feature .phone img { opacity: 1; }
-  .studio, .ipad-grid { grid-template-columns: 1fr; }
+  .studio, .ipad-grid, .intent-grid { grid-template-columns: 1fr; }
+  .intent-copy { justify-items: center; text-align: center; }
+  .intent-copy .hero-actions { justify-content: center; }
   .device-duo { width: min(520px, 86vw); }
   .personas, .steps { grid-template-columns: 1fr 1fr; }
   .stats { grid-template-columns: 1fr 1fr; }
@@ -579,7 +599,8 @@ a.contact-card:hover { border-color: rgba(15, 227, 154, 0.45); transform: transl
   .pills { display: none; }
   .mixer-top { gap: 14px; }
   .split-btn { width: 100%; }
-  .personas, .steps { grid-template-columns: 1fr; }
+  .personas, .steps, .benefits { grid-template-columns: 1fr; }
+  .mixer-controls input[type="range"] { width: 140px; }
   .device-duo { width: 80vw; margin-bottom: 28px; }
   .device-duo .phone { right: -6%; }
   .stat { padding: 30px 16px; }

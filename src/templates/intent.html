@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+{{head}}
+<title>{{var:title}}</title>
+<meta name="description" content="{{var:description}}">
+<link rel="canonical" href="https://musicaistudio.app/{{var:slug}}/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://musicaistudio.app/{{var:slug}}/">
+<meta property="og:title" content="{{var:title}}">
+<meta property="og:description" content="{{var:description}}">
+<meta property="og:image" content="https://musicaistudio.app/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+{{var:jsonld}}
+</head>
+<body>
+{{icons}}
+{{header}}
+
+<main id="main">
+  <section class="page-hero intent-hero">
+    <div class="wrap intent-grid">
+      <div class="intent-copy">
+        <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="/">Stem Split</a><span aria-hidden="true">/</span><span>{{var:crumb}}</span></nav>
+        <span class="eyebrow reveal">{{var:eyebrow}}</span>
+        <h1 class="h-lg reveal" style="--d:.08s">{{var:h1}}</h1>
+        <p class="lead reveal" style="--d:.16s">{{var:lead}}</p>
+        <div class="hero-actions reveal" style="--d:.24s">
+          <a class="appstore" href="{{appstore:@hero}}" aria-label="Download Stem Split on the App Store">
+            <img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54">
+          </a>
+          <a class="btn btn-ghost" href="#try"><svg class="icon"><use href="#i-play"/></svg>Try it here</a>
+        </div>
+      </div>
+      <div class="intent-visual reveal" style="--d:.12s">
+        <div class="phone"><div class="rim"><div class="screen"><span class="island"></span><img src="/assets/img/screens/{{var:shot}}-880.webp" alt="{{var:shot_alt}}" width="440" height="956" fetchpriority="high"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mixer-section" id="try" style="padding-top:40px">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow reveal">Try it in your browser</span>
+        <h2 class="h-md reveal" style="--d:.08s">{{var:demo_title}}</h2>
+        <p class="lead reveal" style="--d:.16s">{{var:demo_lead}}</p>
+      </div>
+{{mixer}}
+      <p class="mixer-note">An original demo track, played live in your browser. In the app, you split your own songs.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center"><span class="eyebrow reveal">How it works</span><h2 class="h-md reveal" style="--d:.08s">{{var:steps_title}}</h2></div>
+      <div class="steps">
+{{var:steps}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center"><span class="eyebrow reveal">Why Stem Split</span><h2 class="h-md reveal" style="--d:.08s">Built for musicians.</h2></div>
+      <div class="personas benefits">
+{{var:benefits}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center"><span class="eyebrow reveal">FAQ</span><h2 class="h-md reveal" style="--d:.08s">Good questions.</h2></div>
+      <div class="faq reveal">
+{{var:faq}}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center"><span class="eyebrow reveal">More with Stem Split</span><h2 class="h-md reveal" style="--d:.08s">One app, every part.</h2></div>
+      <div class="personas">
+{{var:related}}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="bars" aria-hidden="true"></div>
+    <div class="wrap inner">
+      <h2 class="h-lg reveal">Try it on <span class="glow-text">your songs.</span></h2>
+      <p class="lead reveal" style="--d:.1s">Free on the App Store for iPhone and iPad.</p>
+      <a class="appstore reveal" style="--d:.2s" href="{{appstore:@cta}}" aria-label="Download Stem Split on the App Store">
+        <img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54" loading="lazy">
+      </a>
+    </div>
+  </section>
+</main>
+
+{{footer}}
+<script src="/assets/js/site.js?v={{version}}"></script>
+<script src="/assets/js/mixer.js?v={{version}}"></script>
+</body>
+</html>

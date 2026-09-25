@@ -13,11 +13,12 @@
   if (!root) return;
 
   const BPM = 117;
-  const STEP = 60 / BPM / 4;          // one 16th note
+  let STEP = 60 / BPM / 4;            // one 16th note (changes with the tempo control)
+  let transpose = 0;                  // semitones, from the key control
   const LOOP = 64;                    // four bars of 16ths
   const STEMS = ["vocals", "drums", "bass", "guitar", "piano", "other"];
 
-  const mtof = (m) => 440 * Math.pow(2, (m - 69) / 12);
+  const mtof = (m) => 440 * Math.pow(2, (m + transpose - 69) / 12);
 
   // Dm9 · Bbmaj7 · Gm9 · A7 — voiced close so the keys barely move.
   const CHORDS = [
@@ -303,6 +304,9 @@
     { id: "rhythm", on: ["drums", "bass"] },
     { id: "drumless", on: STEMS.filter((s) => s !== "drums") },
     { id: "guitar", on: ["guitar"] },
+    { id: "bass", on: ["bass"] },
+    { id: "drums", on: ["drums"] },
+    { id: "harmony", on: ["guitar", "piano"] },
   ];
 
   /* ---------- Waveforms ---------- */
@@ -400,6 +404,38 @@
       if (!playing) play();
     })
   );
+
+  // Landing pages open the demo on the stem they're about (data-start="karaoke" etc.):
+  // the first press of play splits the song and applies that mix.
+  const start = PRESETS.find((p) => p.id === root.dataset.start);
+  function applyPreset(p) {
+    for (const s of STEMS) state[s] = { mute: !p.on.includes(s), solo: false };
+    applyGates();
+  }
+  if (start) {
+    playBtn.addEventListener("click", () => {
+      if (!root.classList.contains("is-split")) {
+        root.classList.add("is-split");
+        applyPreset(start);
+        setTimeout(fit, 750);
+      }
+    }, { once: true });
+  }
+
+  // Tempo and key: change one without the other, the way the app does.
+  const KEYS = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"];
+  const bpmOut = root.querySelector("[data-bpm]"), keyOut = root.querySelector("[data-key]");
+  root.querySelector("[data-tempo]")?.addEventListener("input", (e) => {
+    const bpm = Math.round(BPM * e.target.value / 100);
+    STEP = 60 / bpm / 4;
+    if (bpmOut) bpmOut.textContent = bpm;
+    const out = root.querySelector("[data-tempo-out]"); if (out) out.textContent = e.target.value + "%";
+  });
+  root.querySelector("[data-transpose]")?.addEventListener("input", (e) => {
+    transpose = +e.target.value;
+    if (keyOut) keyOut.textContent = KEYS[(2 + transpose + 12) % 12] + " minor";
+    const out = root.querySelector("[data-transpose-out]"); if (out) out.textContent = (transpose > 0 ? "+" : "") + transpose;
+  });
 
   // Pause when the demo scrolls out of view — nobody wants a loop in the background.
   new IntersectionObserver(([e]) => { if (!e.isIntersecting && playing) stop(); }, { threshold: 0.05 }).observe(root);

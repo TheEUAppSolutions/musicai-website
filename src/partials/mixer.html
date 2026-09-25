@@ -1,0 +1,63 @@
+      <div class="mixer reveal" data-mixer data-start="{{var:start}}">
+        <div class="mixer-top">
+          <button class="play" data-play aria-label="Play">
+            <svg class="i-play"><use href="#i-play"/></svg><svg class="i-pause"><use href="#i-pause"/></svg>
+          </button>
+          <div class="track-meta"><b>Dreams in Neon Rain</b><span>Mira Solen · demo track</span></div>
+          <div class="pills"><span class="pill">BPM <b data-bpm>117</b></span><span class="pill">Key <b data-key>D minor</b></span></div>
+          <button class="btn btn-primary split-btn" data-split>
+            <span class="t-split"><svg class="icon"><use href="#i-split"/></svg> Split into stems</span>
+            <span class="t-merge"><svg class="icon"><use href="#i-merge"/></svg> Back to full mix</span>
+          </button>
+        </div>
+
+        <div class="lanes">
+          <div class="mix-lane">
+            <div class="lane-name"><svg class="icon"><use href="#i-notes"/></svg><span>Full mix</span></div>
+            <div class="wave-box"><canvas data-wave="mix"></canvas></div>
+            <span class="hint">6 stems inside</span>
+          </div>
+          <div class="lane" data-stem="vocals" style="--i:0">
+            <div class="lane-name"><svg class="icon"><use href="#i-mic"/></svg><span>Vocals</span></div>
+            <div class="wave-box"><canvas data-wave="vocals"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute vocals">M</button><button class="ms s" aria-pressed="false" aria-label="Solo vocals">S</button></div>
+          </div>
+          <div class="lane" data-stem="drums" style="--i:1">
+            <div class="lane-name"><svg class="icon"><use href="#i-drum"/></svg><span>Drums</span></div>
+            <div class="wave-box"><canvas data-wave="drums"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute drums">M</button><button class="ms s" aria-pressed="false" aria-label="Solo drums">S</button></div>
+          </div>
+          <div class="lane" data-stem="bass" style="--i:2">
+            <div class="lane-name"><svg class="icon"><use href="#i-bass"/></svg><span>Bass</span></div>
+            <div class="wave-box"><canvas data-wave="bass"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute bass">M</button><button class="ms s" aria-pressed="false" aria-label="Solo bass">S</button></div>
+          </div>
+          <div class="lane" data-stem="guitar" style="--i:3">
+            <div class="lane-name"><svg class="icon"><use href="#i-guitar"/></svg><span>Guitar</span></div>
+            <div class="wave-box"><canvas data-wave="guitar"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute guitar">M</button><button class="ms s" aria-pressed="false" aria-label="Solo guitar">S</button></div>
+          </div>
+          <div class="lane" data-stem="piano" style="--i:4">
+            <div class="lane-name"><svg class="icon"><use href="#i-piano"/></svg><span>Keys</span></div>
+            <div class="wave-box"><canvas data-wave="piano"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute keys">M</button><button class="ms s" aria-pressed="false" aria-label="Solo keys">S</button></div>
+          </div>
+          <div class="lane" data-stem="other" style="--i:5">
+            <div class="lane-name"><svg class="icon"><use href="#i-notes"/></svg><span>Other</span></div>
+            <div class="wave-box"><canvas data-wave="other"></canvas></div>
+            <div class="lane-btns"><button class="ms m" aria-pressed="false" aria-label="Mute other">M</button><button class="ms s" aria-pressed="false" aria-label="Solo other">S</button></div>
+          </div>
+        </div>
+
+{{var:controls}}
+        <div class="presets" role="group" aria-label="Quick mixes">
+          <button class="preset" data-preset="full" aria-pressed="true">Full band</button>
+          <button class="preset" data-preset="karaoke" aria-pressed="false">Karaoke (no vocals)</button>
+          <button class="preset" data-preset="acapella" aria-pressed="false">Acapella</button>
+          <button class="preset" data-preset="rhythm" aria-pressed="false">Drums + bass</button>
+          <button class="preset" data-preset="drumless" aria-pressed="false">Drumless</button>
+          <button class="preset" data-preset="guitar" aria-pressed="false">Guitar only</button>
+          <button class="preset" data-preset="bass" aria-pressed="false">Bass only</button>
+          <button class="preset" data-preset="drums" aria-pressed="false">Drums only</button>
+        </div>
+      </div>
