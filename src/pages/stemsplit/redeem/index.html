@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+{{head}}
+<title>Redeem your Stem Split code</title>
+<meta name="description" content="Open this link on your iPhone or iPad to unlock Stem Split with your code.">
+<meta name="robots" content="noindex">
+</head>
+<body>
+{{icons}}
+{{header}}
+
+<!-- Access-code link target: https://musicaistudio.app/stemsplit/redeem?code=… (made in
+     Horse Revenue, the app's Codes tab). With the app installed iOS opens it straight in the
+     app (the AASA file covers /stemsplit/*) and this page is never shown. It's the fallback:
+     no app yet, a link opened inside another app's browser, or one pasted into Safari. -->
+<main id="main">
+  <div class="wrap center-card">
+    <img class="app-icon" src="/assets/img/icon.svg" alt="Stem Split app icon" width="108" height="108">
+    <h1 class="h-md">Your Stem Split code</h1>
+    <p>This code unlocks Stem Split Pro. Open it in the app on the iPhone or iPad where you use Stem Split.</p>
+    <p class="promo" id="code" hidden></p>
+    <a class="btn btn-primary" id="open" href="stemsplit://redeem" hidden>Open in Stem Split</a>
+    <p class="small" id="type" hidden>Or type it in the app: <b>Account → Redeem Promo Code</b>.</p>
+    <p class="small">Don't have Stem Split yet? Get it, then come back to this page and tap “Open in Stem Split”.</p>
+    <a class="appstore" href="{{appstore:@badge}}" aria-label="Get Stem Split on the App Store"><img src="/assets/img/app-store-badge.svg" alt="Download on the App Store" width="162" height="54"></a>
+  </div>
+</main>
+
+{{footer}}
+<script src="/assets/js/site.js?v={{version}}"></script>
+<script>
+  // The code rides in the link; show it, and hand it to the app through its own scheme
+  // (which opens the app even where the universal link didn't).
+  const code = (new URLSearchParams(location.search).get("code") || "").trim().slice(0, 40);
+  if (/^[A-Za-z0-9-]{4,40}$/.test(code)) {
+    const shown = document.getElementById("code");
+    shown.textContent = code.toUpperCase();
+    shown.hidden = false;
+    const open = document.getElementById("open");
+    open.href = "stemsplit://redeem/" + encodeURIComponent(code);
+    open.hidden = false;
+    document.getElementById("type").hidden = false;
+  }
+</script>
+</body>
+</html>
