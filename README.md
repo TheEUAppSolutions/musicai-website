@@ -31,3 +31,8 @@ carry campaign tokens once `APPSTORE_PT` is set.
 
 Keep these working: `/privacy-policy/`, `/term-and-conditions/` (cited in the App Store
 description and inside the app), `/stemsplit`, `/.well-known/apple-app-site-association`.
+
+`/backseattv/` is Backseat TV's "Try a sample playlist": the app reads `samples.json`, which points
+at `samples/backseat-tv-samples.m3u` (our own short HLS channels, an MKV, logos, and two Blender
+Foundation films linked from blender.org). Made by `scripts/make-sample-channels.sh` in the
+CarPlayTV repo (branch `musicai`). Keep the folder and its addresses.

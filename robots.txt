@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /stemsplit/
+Disallow: /backseattv/
 
 Sitemap: https://musicaistudio.app/sitemap.xml
