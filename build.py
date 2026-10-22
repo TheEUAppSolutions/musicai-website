@@ -37,7 +37,8 @@ APPSTORE_PT = "127629796"
 # Pages kept out of the sitemap (and marked noindex in their own <head>).
 UNLISTED = {"404.html", "stemsplit/index.html", "stemsplit/redeem/index.html",
             "backseattv/privacy/index.html", "backseattv/terms/index.html",
-            "cutiemaps/privacy/index.html", "cutiemaps/terms/index.html"}
+            "cutiemaps/privacy/index.html", "cutiemaps/terms/index.html",
+            "seatguru/privacy/index.html"}
 
 assets = sorted((ROOT / "assets").glob("[cj]s*/*"))
 version = hashlib.sha1(b"".join(p.read_bytes() for p in assets)).hexdigest()[:8]
