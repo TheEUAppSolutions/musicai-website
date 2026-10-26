@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
-Disallow: /stemsplit/
-Disallow: /backseattv/
 
 Sitemap: https://musicaistudio.app/sitemap.xml
+
+# /stemsplit/, /stemsplit/redeem/, /backseattv/, /cutiemaps/ and /seatguru/ are kept out
+# of search by a noindex meta tag on each page, not by Disallow. A disallowed page is
+# never crawled, so Google never reads its noindex and the URL can still be listed.
+# Crawlable + noindex is what actually removes them.
