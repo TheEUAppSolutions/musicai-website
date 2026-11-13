@@ -41,6 +41,7 @@ UNLISTED = {"404.html", "stemsplit/index.html", "stemsplit/redeem/index.html",
             "seatguru/privacy/index.html", "seatguru/terms/index.html",
             "glutenfree/privacy/index.html", "glutenfree/terms/index.html",
             "ansitz/privacy/index.html", "ansitz/terms/index.html",
+            "oilwellnavigator/index.html",
             "oilwellnavigator/privacy/index.html", "oilwellnavigator/terms/index.html"}
 
 assets = sorted((ROOT / "assets").glob("[cj]s*/*"))
