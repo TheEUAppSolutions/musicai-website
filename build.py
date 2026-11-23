@@ -42,7 +42,8 @@ UNLISTED = {"404.html", "stemsplit/index.html", "stemsplit/redeem/index.html",
             "glutenfree/privacy/index.html", "glutenfree/terms/index.html",
             "ansitz/privacy/index.html", "ansitz/terms/index.html",
             "oilwellnavigator/index.html",
-            "oilwellnavigator/privacy/index.html", "oilwellnavigator/terms/index.html"}
+            "oilwellnavigator/privacy/index.html", "oilwellnavigator/terms/index.html",
+            "clothingdesigner/privacy/index.html", "clothingdesigner/terms/index.html"}
 
 assets = sorted((ROOT / "assets").glob("[cj]s*/*"))
 version = hashlib.sha1(b"".join(p.read_bytes() for p in assets)).hexdigest()[:8]
