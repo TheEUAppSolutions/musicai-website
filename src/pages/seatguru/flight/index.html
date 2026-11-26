@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- SeatGuru's own App Store banner (the site's shared head carries Stem Split's). -->
+<meta name="apple-itunes-app" content="app-id=6824291797">
+<meta name="robots" content="noindex">
+<title>A flight on SeatGuru: Flight Seat Maps</title>
+<meta name="description" content="Someone shared a flight with you: see its plane and seat map in SeatGuru.">
+<meta property="og:title" content="A flight on SeatGuru">
+<meta property="og:description" content="See the plane and its seat map in SeatGuru: Flight Seat Maps.">
+<meta property="og:type" content="website">
+<style>
+  :root { --bg: #f4f6fa; --card: #fff; --ink: #1c2333; --soft: #5b6478; --accent: #1f64c8; --line: #dfe4ec; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #11151d; --card: #1b212c; --ink: #eef1f6; --soft: #a3acbd; --accent: #6aa5ff; --line: #2c3442; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px;
+         background: var(--bg); color: var(--ink);
+         font: 17px/1.45 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; }
+  main { width: 100%; max-width: 420px; background: var(--card); border-radius: 22px; padding: 28px 24px;
+         box-shadow: 0 1px 0 var(--line); text-align: center; }
+  .eyebrow { color: var(--accent); font-weight: 600; font-size: 15px; margin: 0 0 6px; }
+  h1 { font: 700 40px/1.1 ui-rounded, -apple-system, sans-serif; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .when { color: var(--soft); margin: 0 0 22px; }
+  .lead { margin: 0 0 24px; }
+  a.button { display: block; padding: 15px 18px; border-radius: 14px; font-weight: 600; text-decoration: none; margin-top: 10px; }
+  a.primary { background: var(--accent); color: #fff; }
+  a.secondary { color: var(--accent); border: 1px solid var(--line); }
+  .small { color: var(--soft); font-size: 13px; margin: 20px 0 0; }
+  .small a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">SeatGuru: Flight Seat Maps</p>
+  <h1 id="flight">A shared flight</h1>
+  <p class="when" id="when"></p>
+  <p class="lead">See its plane, its seat map, the sun side and the turbulence forecast in SeatGuru.</p>
+  <a class="button primary" id="open" href="seatguru://flight">Open in SeatGuru</a>
+  <a class="button secondary" href="https://apps.apple.com/app/id6824291797">Get SeatGuru on the App Store</a>
+  <p class="small">SeatGuru is for iPhone. <a href="/seatguru/privacy/">Privacy</a> · <a href="/seatguru/terms/">Terms</a></p>
+</main>
+<script>
+  // The link carries the flight: /seatguru/flight/?f=BA117&d=2026-11-27&o=LHR (the app's FlightLink).
+  // Only what reads as a flight number, a date and an airport code is used; everything goes in as text.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var f = (q.get("f") || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+    var d = q.get("d") || "";
+    var o = (q.get("o") || "").toUpperCase();
+    var number = /^([A-Z0-9]{2})(\d{1,4}[A-Z]?)$/.exec(f);
+    var day = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d);
+    var origin = /^[A-Z]{3,4}$/.test(o) ? o : "";
+    if (!number || !day) return;
+    var flight = number[1] + " " + number[2].replace(/^0+(?=\d)/, "");
+    document.getElementById("flight").textContent = flight;
+    var date = new Date(Date.UTC(+day[1], +day[2] - 1, +day[3], 12));
+    var when = date.toLocaleDateString(undefined, { weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+    document.getElementById("when").textContent = origin ? when + " · from " + origin : when;
+    document.title = flight + " on SeatGuru";
+    var app = "seatguru://flight?f=" + encodeURIComponent(f) + "&d=" + encodeURIComponent(d) + (origin ? "&o=" + origin : "");
+    document.getElementById("open").setAttribute("href", app);
+  })();
+</script>
+</body>
+</html>
