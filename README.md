@@ -15,6 +15,7 @@ Plain static HTML/CSS/JS on GitHub Pages, no framework and no dependencies.
 | `assets/js/mixer.js` | The "hear it split" demo: an original loop synthesised live with Web Audio, six stems with mute/solo. No audio files, nothing licensed. |
 | `.well-known/apple-app-site-association` | **Universal Links for the app.** `/stemsplit?promo_code=…` opens Stem Split (see `SceneDelegate.handleSelfHostedUniversalLink`). Don't remove it. |
 | `stemsplit/` | Fallback page for that link when the app isn't installed. |
+| `seatguru/flight/` | SeatGuru's shared flight: `/seatguru/flight/?f=BA117&d=2026-11-27&o=LHR` opens SeatGuru on that flight (the universal link; the app's `FlightLink`), and this page names the flight with Open in SeatGuru (`seatguru://`) and the App Store when it isn't installed. Its own head: the shared one carries Stem Split's App Store banner. |
 
 ## Build and preview
 
@@ -30,7 +31,7 @@ carry campaign tokens once `APPSTORE_PT` is set.
 ## URLs the app and App Store depend on
 
 Keep these working: `/privacy-policy/`, `/term-and-conditions/` (cited in the App Store
-description and inside the app), `/stemsplit`, `/.well-known/apple-app-site-association`.
+description and inside the app), `/stemsplit`, `/seatguru/flight/` (links SeatGuru shares), `/.well-known/apple-app-site-association`.
 
 `/backseattv/` is Backseat TV's "Try a sample playlist": the app reads `samples.json`, which points
 at `samples/backseat-tv-samples.m3u` (our own short HLS channels, an MKV, logos, and two Blender
